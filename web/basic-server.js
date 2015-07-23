@@ -1,7 +1,8 @@
 var http = require("http");
 var handler = require("./request-handler");
 var initialize = require("./initialize.js");
-
+var helpersFile = require('./http-helpers');
+var fs = require('fs');
 // Why do you think we have this here?
 // HINT: It has to do with what's in .gitignore
 initialize();
@@ -9,6 +10,10 @@ initialize();
 var port = 8080;
 var ip = "127.0.0.1";
 var server = http.createServer(handler.handleRequest);
+
+// console.log('req', req);
+
+
 
 if (module.parent) {
   module.exports = server;
